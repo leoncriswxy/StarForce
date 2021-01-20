@@ -5,6 +5,7 @@
 // Feedback: mailto:ellan@gameframework.cn
 //------------------------------------------------------------
 
+using GameFramework;
 using GameFramework.DataTable;
 using GameFramework.Event;
 using UnityGameFramework.Runtime;
@@ -66,7 +67,7 @@ namespace StarForce
                 Log.Warning("Can not load scene '{0}' from data table.", sceneId.ToString());
                 return;
             }
-
+            GameFrameworkLog.Debug($"加载场景为：{drScene.AssetName}");
             GameEntry.Scene.LoadScene(AssetUtility.GetSceneAsset(drScene.AssetName), Constant.AssetPriority.SceneAsset, this);
             m_BackgroundMusicId = drScene.BackgroundMusicId;
         }

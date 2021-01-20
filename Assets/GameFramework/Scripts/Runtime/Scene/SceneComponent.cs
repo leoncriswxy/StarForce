@@ -266,7 +266,18 @@ namespace UnityGameFramework.Runtime
                 return;
             }
 
+            //常见跳转前卸载其他场景 保证同一时刻是有一个场景存在
+           // UnloadAllScene();
+
             m_SceneManager.LoadScene(sceneAssetName, priority, userData);
+        }
+        public void UnloadAllScene()
+        {
+            string[] loadedSceneAssetNames = GetLoadedSceneAssetNames();
+            for (int i = 0; i < loadedSceneAssetNames.Length; i++)
+            {
+                UnloadScene(loadedSceneAssetNames[i]);
+            }
         }
 
         /// <summary>

@@ -149,6 +149,7 @@ namespace UnityGameFramework.Runtime
         /// </summary>
         protected override void Awake()
         {
+
             base.Awake();
 
             m_UIManager = GameFrameworkEntry.GetModule<IUIManager>();
@@ -397,6 +398,7 @@ namespace UnityGameFramework.Runtime
             foreach (IUIForm uiForm in m_InternalUIFormResults)
             {
                 results.Add((UIForm)uiForm);
+                
             }
         }
 

@@ -17,6 +17,12 @@ namespace StarForce
 
         private ProcedureMenu m_ProcedureMenu = null;
 
+        #region Test
+        public void OnTestBtnClick()
+        {
+            GameEntry.UI.OpenUIForm(UIFormId.TestForm,"i am your father");
+        }
+        #endregion
         public void OnStartButtonClick()
         {
             m_ProcedureMenu.StartGame();
